@@ -1,6 +1,10 @@
 module IPGeo
   class Result
 
+    EU_COUNTRY_CODES = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI",
+      "FR", "DE", "GB", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL",
+      "PL", "PT", "RO", "SK", "SI", "ES", "SE"].freeze
+
     def initialize(hash)
       @hash = hash
     end
@@ -27,6 +31,10 @@ module IPGeo
 
     def geoname_id
       @hash['geoname_id']
+    end
+
+    def eu?
+      EU_COUNTRY_CODES.include?(country)
     end
 
   end
