@@ -1,0 +1,1 @@
+require 'ip_geo'
